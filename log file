@@ -1,0 +1,137 @@
+ec2-user:~/environment/hw-ruby-intro/spec (master) $ rspec part1_spec.rb
+............
+
+Finished in 0.0109 seconds (files took 0.08842 seconds to load)
+12 examples, 0 failures
+
+ec2-user:~/environment/hw-ruby-intro/spec (master) $ rspec part2_spec.rb
+.F.F....F.
+
+Failures:
+
+  1) #hello The hello method returns the correct string [30 points]
+     Failure/Error: expect(hello('Dan').class).to eq(String)
+     
+       expected: String
+            got: NilClass
+     
+       (compared using ==)
+     
+       Diff:
+       @@ -1,2 +1,2 @@
+       -String
+       +NilClass
+       
+     # ./part2_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+  2) #starts_with_consonant? classifies true cases [10 points]
+     Failure/Error: expect(starts_with_consonant?('v')).to be_truthy, "'v' is a consonant"
+       'v' is a consonant
+     # ./part2_spec.rb:23:in `block (2 levels) in <top (required)>'
+
+  3) #binary_multiple_of_4? classifies valid binary numbers [30 points]
+     Failure/Error: expect(binary_multiple_of_4?(string)).to be_truthy,  "Incorrect results for input: \"#{string}\""
+       Incorrect results for input: "1010101010100"
+     # ./part2_spec.rb:48:in `block (3 levels) in <top (required)>'
+     # ./part2_spec.rb:47:in `each'
+     # ./part2_spec.rb:47:in `block (2 levels) in <top (required)>'
+
+Finished in 0.01991 seconds (files took 0.09046 seconds to load)
+10 examples, 3 failures
+
+Failed examples:
+
+rspec ./part2_spec.rb:10 # #hello The hello method returns the correct string [30 points]
+rspec ./part2_spec.rb:22 # #starts_with_consonant? classifies true cases [10 points]
+rspec ./part2_spec.rb:46 # #binary_multiple_of_4? classifies valid binary numbers [30 points]
+
+ec2-user:~/environment/hw-ruby-intro/spec (master) $ rspec part3_spec.rb
+.FFFF...FFFF
+
+Failures:
+
+  1) BookInStock getters and setters should set ISBN [10 points]
+     Failure/Error: before(:each)  { @book = BookInStock.new('isbn1', 33.8) }
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:11:in `initialize'
+     # ./part3_spec.rb:11:in `new'
+     # ./part3_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  2) BookInStock getters and setters should set price [10 points]
+     Failure/Error: before(:each)  { @book = BookInStock.new('isbn1', 33.8) }
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:11:in `initialize'
+     # ./part3_spec.rb:11:in `new'
+     # ./part3_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  3) BookInStock getters and setters should be able to change ISBN [10 points]
+     Failure/Error: before(:each)  { @book = BookInStock.new('isbn1', 33.8) }
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:11:in `initialize'
+     # ./part3_spec.rb:11:in `new'
+     # ./part3_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  4) BookInStock getters and setters should be able to change price [10 points]
+     Failure/Error: before(:each)  { @book = BookInStock.new('isbn1', 33.8) }
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:11:in `initialize'
+     # ./part3_spec.rb:11:in `new'
+     # ./part3_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  5) BookInStock #price_as_string should be defined
+     Failure/Error: expect(BookInStock.new('isbn1', 10)).to respond_to(:price_as_string)
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:40:in `initialize'
+     # ./part3_spec.rb:40:in `new'
+     # ./part3_spec.rb:40:in `block (3 levels) in <top (required)>'
+
+  6) BookInStock #price_as_string should display 33.95 as "$33.95" [10 points]
+     Failure/Error: expect(BookInStock.new('isbn11', 33.95).price_as_string).to eq('$33.95')
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:43:in `initialize'
+     # ./part3_spec.rb:43:in `new'
+     # ./part3_spec.rb:43:in `block (3 levels) in <top (required)>'
+
+  7) BookInStock #price_as_string should display 1.1 as $1.10 [10 points]
+     Failure/Error: expect(BookInStock.new('isbn11', 1.1).price_as_string).to eq('$1.10')
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:46:in `initialize'
+     # ./part3_spec.rb:46:in `new'
+     # ./part3_spec.rb:46:in `block (3 levels) in <top (required)>'
+
+  8) BookInStock #price_as_string should display 20 as $20.00 [10 points]
+     Failure/Error: expect(BookInStock.new('isbn11', 20).price_as_string).to eq('$20.00')
+     
+     ArgumentError:
+       wrong number of arguments (given 2, expected 0)
+     # ./part3_spec.rb:49:in `initialize'
+     # ./part3_spec.rb:49:in `new'
+     # ./part3_spec.rb:49:in `block (3 levels) in <top (required)>'
+
+Finished in 0.00968 seconds (files took 0.08955 seconds to load)
+12 examples, 8 failures
+
+Failed examples:
+
+rspec ./part3_spec.rb:12 # BookInStock getters and setters should set ISBN [10 points]
+rspec ./part3_spec.rb:15 # BookInStock getters and setters should set price [10 points]
+rspec ./part3_spec.rb:18 # BookInStock getters and setters should be able to change ISBN [10 points]
+rspec ./part3_spec.rb:22 # BookInStock getters and setters should be able to change price [10 points]
+rspec ./part3_spec.rb:39 # BookInStock #price_as_string should be defined
+rspec ./part3_spec.rb:42 # BookInStock #price_as_string should display 33.95 as "$33.95" [10 points]
+rspec ./part3_spec.rb:45 # BookInStock #price_as_string should display 1.1 as $1.10 [10 points]
+rspec ./part3_spec.rb:48 # BookInStock #price_as_string should display 20 as $20.00 [10 points]
